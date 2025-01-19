@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useEffect, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
 /**
@@ -46,17 +46,7 @@ const TitleHrro = ({
 }) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const charsRef = useRef<HTMLSpanElement[]>([]);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const animationComplete = useRef(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useLayoutEffect(() => {
     if (animationComplete.current) return;
@@ -84,36 +74,32 @@ const TitleHrro = ({
       let animation: gsap.core.Tween | null = null;
 
       const handleMouseEnter = () => {
-        if (!isMobile) {
-          if (animation) {
-            animation.kill();
-          }
-          
-          animation = gsap.to(char, {
-            y: -15,
-            scale: 1.1,
-            color: colorHover,
-            duration: 0.3,
-            ease: "back.out(2)",
-            transformOrigin: "center center"
-          });
+        if (animation) {
+          animation.kill();
         }
+        
+        animation = gsap.to(char, {
+          y: -15,
+          scale: 1.1,
+          color: colorHover,
+          duration: 0.3,
+          ease: "back.out(2)",
+          transformOrigin: "center center"
+        });
       };
 
       const handleMouseLeave = () => {
-        if (!isMobile) {
-          if (animation) {
-            animation.kill();
-          }
-          
-          animation = gsap.to(char, {
-            y: 0,
-            scale: 1,
-            color: "inherit",
-            duration: 0.2,
-            ease: "back.out(2)",
-          });
+        if (animation) {
+          animation.kill();
         }
+        
+        animation = gsap.to(char, {
+          y: 0,
+          scale: 1,
+          color: "inherit",
+          duration: 0.2,
+          ease: "back.out(2)",
+        });
       };
 
       char.addEventListener("mouseenter", handleMouseEnter);
@@ -125,7 +111,7 @@ const TitleHrro = ({
       };
     });
 
-  }, [isMobile, colorHover]);
+  }, [colorHover]);
 
   /**
    * Converts position value to pixel string if number is provided
@@ -160,23 +146,27 @@ const TitleHrro = ({
     return `text-[${color}]`;
   };
 
+  const isMobile = window.innerWidth < 768;
+
   return (
     <h1
       ref={titleRef}
       className={`absolute ${getFontSize(fontSize)} font-extrabold ${getColorClass(colorText)} ${
         textnowrap ? "text-nowrap" : ""
-      } transition-all ${isMobile ? 'left-1/2 blur-[10px]' : `left-[${getPositionValue(
-        position?.left ?? 0
-      )}]`} top-[${getPositionValue(
-        position?.top ?? 0
-      )}] -translate-x-1/2 -translate-y-1/2`}
-      style={{ opacity: 1 }} // Ensure text stays visible
+      } transition-all -translate-x-1/2 -translate-y-1/2 md:blur-none blur-[4px]`}
+      style={{ 
+        opacity: 1,
+        left: isMobile ? "50%" : getPositionValue(position.left ?? 0),
+        top: getPositionValue(position.top ?? 0),
+        right: position.right ? getPositionValue(position.right) : 'auto',
+        bottom: position.bottom ? getPositionValue(position.bottom) : 'auto'
+      }}
     >
       {text.split("").map((char, i) => (
-        <span 
-          key={i} 
-          className={`hero-char inline-block ${!isMobile ? 'cursor-pointer' : ''}`}
-          style={{ opacity: 1 }} // Ensure characters stay visible
+        <span
+          key={i}
+          className="hero-char inline-block cursor-pointer"
+          style={{ opacity: 1 }}
         >
           {char === " " ? "\u00A0" : char}
         </span>

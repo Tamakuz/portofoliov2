@@ -197,18 +197,18 @@ const HeroSection = () => {
       <TitleHrro
         text="FULLSTACK"
         textnowrap={true}
-        position={{ 
-          left: window.innerWidth < 768 ? "50%" : "30%", 
-          top: window.innerWidth < 768 ? "15%" : "30%" 
+        position={{
+          left: "35%",
+          top: "30%",
         }}
         fontSize={window.innerWidth < 768 ? "text-6xl" : "text-9xl"}
       />
       <TitleHrro
         text="CODE WITH TAMA"
         textnowrap={true}
-        position={{ 
-          left: window.innerWidth < 768 ? "50%" : "35%", 
-          top: window.innerWidth < 768 ? "25%" : "45%" 
+        position={{
+          left: "45%",
+          top: "45%",
         }}
         fontSize={window.innerWidth < 768 ? "text-4xl" : "text-8xl"}
       />
@@ -228,10 +228,12 @@ const HeroSection = () => {
         <div className="ornament-image absolute w-32 md:w-40 h-16 md:h-20 border-b-4 border-r-4 border-emerald-400 -bottom-4 -right-4 rounded-br-2xl" />
       </div>
 
-      <ImageWatermark position={{ 
-        bottom: window.innerWidth < 768 ? "5%" : "15%", 
-        left: window.innerWidth < 768 ? "5%" : "5%" 
-      }} />
+      <ImageWatermark
+        position={{
+          bottom: window.innerWidth < 768 ? "5%" : "15%",
+          left: window.innerWidth < 768 ? "5%" : "5%",
+        }}
+      />
 
       <LocationHero />
     </section>
