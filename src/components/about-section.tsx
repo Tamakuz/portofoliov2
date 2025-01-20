@@ -23,7 +23,7 @@ const AboutSection = () => {
       top: Math.cos(i * Math.PI/2.5) * (25 + i * 8),
       left: Math.sin(i * Math.PI/2.5) * (25 + i * 8),
     })),
-    bottomLeft: Array(4).fill(0).map((_, i) => ({
+    bottomLeft: Array(4).fill(0).map(() => ({
       top: Math.random() * 60,
       left: Math.random() * 80,
       rotation: Math.random() * 360,

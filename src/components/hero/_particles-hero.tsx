@@ -4,13 +4,12 @@ import gsap from "gsap";
 const ParticlesHero = () => {
   const particlesRef = useRef<HTMLDivElement>(null);
   const [particles, setParticles] = useState<{x: number, y: number, char: string, blur: number, velocity: {x: number, y: number}}[]>([]);
-  const animationFrameRef = useRef<number>();
   const lastUpdateRef = useRef<number>(0);
   const FPS = 24; // Reduced FPS for better performance
   const frameDelay = 1000 / FPS;
 
   // Memoize text and chars to prevent unnecessary recalculations
-  const { text, chars } = useMemo(() => {
+  const { chars } = useMemo(() => {
     const text = "FULLSTACK DEVELOPER CODE WITH TAMA";
     return { text, chars: text.split('') };
   }, []);
