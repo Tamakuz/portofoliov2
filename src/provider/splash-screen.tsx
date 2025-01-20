@@ -231,7 +231,7 @@ const SplashScreen = ({ children }: { children: React.ReactNode }) => {
   return (
     <main
       ref={mainRef}
-      className="min-h-screen bg-gray-900 relative overflow-hidden"
+      className="min-h-screen bg-zinc-900 relative overflow-hidden"
     >
       <div className="main-content">{children}</div>
 

@@ -1,10 +1,10 @@
 import fotoProfil from "../assets/profile.webp";
 import { useLayoutEffect, useRef, useEffect } from "react";
 import gsap from "gsap";
-import TitleHrro from "./_title-hero";
-import ImageWatermark from "./_image-watermark";
-import ParticlesHero from "./_particles-hero";
-import LocationHero from "./_location-hero";
+import TitleHrro from "./hero/_title-hero";
+import ImageWatermark from "./hero/_image-watermark";
+import ParticlesHero from "./hero/_particles-hero";
+import LocationHero from "./hero/_location-hero";
 
 const HeroSection = () => {
   const imageRef = useRef<HTMLImageElement>(null);
@@ -180,7 +180,7 @@ const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-screen w-screen relative bg-black p-4 md:p-20 overflow-hidden"
+      className="h-screen w-screen relative bg-zinc-900 p-4 md:p-20 overflow-hidden"
     >
       {/* Particles */}
       <ParticlesHero />
@@ -230,7 +230,7 @@ const HeroSection = () => {
 
       <ImageWatermark
         position={{
-          bottom: window.innerWidth < 768 ? "5%" : "15%",
+          bottom: window.innerWidth < 768 ? "15%" : "15%",
           left: window.innerWidth < 768 ? "5%" : "5%",
         }}
       />

@@ -1,11 +1,14 @@
 import SplashScreen from "./provider/splash-screen";
 import HeroSection from "./components/hero-section";
+import AboutSection from "./components/about-section";
 
 function App() {
   return (
     <SplashScreen>
-      <div className="bg-black h-[200vh] w-screen">
+      <div>
         <HeroSection />
+        <AboutSection />
+        <div className="h-screen w-screen bg-zinc-900"></div>
       </div>
     </SplashScreen>
   );

@@ -1,4 +1,4 @@
-import JovanImage from "../assets/jovan.png";
+import JovanImage from "../../assets/jovan.png";
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 
@@ -98,8 +98,7 @@ const ImageWatermark = ({
       className={`absolute flex items-center gap-3 md:gap-4 lg:gap-6 
         ${screenSize.isMobile ? "flex-col" : "flex-row"}
         ${screenSize.isMobile ? "p-3" : screenSize.isTablet ? "p-4" : "p-5"}
-        backdrop-blur-sm bg-black/10 rounded-xl transition-all duration-300
-        hover:bg-black/20
+        transition-all duration-300
         ${screenSize.isMobile ? "w-max mx-auto" : ""}`}
     >
       <div
