@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const text = "Halo, saya Tama, seorang pengembang fullstack yang memiliki fokus utama pada pengembangan front-end. Saya sangat menikmati bekerja di persimpangan antara kreativitas dan teknologi. Dengan keahlian khusus dalam menciptakan produk web yang ramah pengguna dan memiliki nilai estetika tinggi, saya telah mengembangkan berbagai proyek mulai dari website hingga aplikasi web yang kompleks. Saya selalu bersemangat dalam membangun solusi digital yang inovatif menggunakan teknologi terkini, termasuk eksplorasi saya dalam teknologi blockchain. Di luar dunia pengembangan, saya menghabiskan waktu dengan menikmati musik atau sesekali menonton film. Mari kita wujudkan ide-ide kreatif Anda menjadi produk digital yang mengesankan dan bermanfaat.";
+  const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.";
 
   // Generate random positions once on component mount
   const decorativePositions = useRef({
