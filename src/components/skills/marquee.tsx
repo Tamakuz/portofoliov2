@@ -46,7 +46,6 @@ export function Marquee({
   speed = 1,
   ...props
 }: MarqueeProps) {
-  const duration = 40 / speed;
   
   return (
     <div
