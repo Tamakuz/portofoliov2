@@ -57,6 +57,7 @@ const AboutSection = () => {
       gsap.to(element, {
         y: "random(-60, 60)",
         x: "random(-60, 60)",
+        zIndex: "random(1, 3)",
         rotation: "random(-20, 20)",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -97,14 +98,14 @@ const AboutSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen w-full bg-zinc-900 relative px-4 sm:px-6 md:px-8 lg:px-20 py-12 sm:py-16 md:py-20"
+      className="h-fit w-full bg-zinc-900 relative px-4 sm:px-6 md:px-8 lg:px-20 py-12 sm:py-16 md:py-20"
     >
       <div className="max-w-7xl mx-auto">
         <div className="relative">
           {/* Enhanced glowing orbs with gradients - Responsive sizes */}
-          <div className="decorative-midground absolute -top-20 sm:-top-30 md:-top-40 right-10 sm:right-20 md:right-40 w-[15rem] sm:w-[20rem] md:w-[25rem] h-[15rem] sm:h-[20rem] md:h-[25rem] rounded-full bg-gradient-to-br from-emerald-400/25 via-emerald-500/20 to-transparent blur-[60px] sm:blur-[80px] md:blur-[100px] animate-pulse" />
-          <div className="decorative-midground absolute top-20 sm:top-30 md:top-40 -left-20 sm:-left-30 md:-left-40 w-[20rem] sm:w-[28rem] md:w-[35rem] h-[20rem] sm:h-[28rem] md:h-[35rem] rounded-full bg-gradient-to-tr from-emerald-400/25 via-emerald-500/20 to-transparent blur-[80px] sm:blur-[100px] md:blur-[120px] animate-pulse" />
-          <div className="decorative-midground absolute -top-10 sm:-top-15 md:-top-20 left-20 sm:left-40 md:left-60 w-[10rem] sm:w-[12rem] md:w-[15rem] h-[10rem] sm:h-[12rem] md:h-[15rem] rounded-full bg-gradient-to-bl from-emerald-300/20 via-emerald-400/15 to-transparent blur-[50px] sm:blur-[65px] md:blur-[80px] animate-pulse" />
+          <div className="decorative-midground absolute -top-20 sm:-top-30 md:-top-40 right-10 sm:right-20 md:right-40 w-[15rem] sm:w-[20rem] md:w-[25rem] h-[15rem] sm:h-[20rem] md:h-[25rem] rounded-full bg-gradient-to-br from-emerald-400/25 via-emerald-500/20 to-transparent blur-[60px] sm:blur-[80px] md:blur-[100px]" />
+          <div className="decorative-midground absolute top-20 sm:top-30 md:top-40 -left-20 sm:-left-30 md:-left-40 w-[20rem] sm:w-[28rem] md:w-[35rem] h-[20rem] sm:h-[28rem] md:h-[35rem] rounded-full bg-gradient-to-tr from-emerald-400/25 via-emerald-500/20 to-transparent blur-[80px] sm:blur-[100px] md:blur-[120px]" />
+          {/* <div className="decorative-midground absolute -top-10 sm:-top-15 md:-top-20 left-20 sm:left-40 md:left-60 w-[10rem] sm:w-[12rem] md:w-[15rem] h-[10rem] sm:h-[12rem] md:h-[15rem] rounded-full bg-gradient-to-bl from-emerald-300/20 via-emerald-400/15 to-transparent blur-[50px] sm:blur-[65px] md:blur-[80px]" /> */}
 
           {/* Decorative patterns - Hidden on smaller screens */}
           <div className="hidden md:block">
